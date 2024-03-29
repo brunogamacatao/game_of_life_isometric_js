@@ -155,7 +155,12 @@ function draw() {
       var layer = layers[i];
       for (var j = 0; j < layer.length; j++) {
         var point = layer[j];
-        iso.add(Shape.Prism(new Point(point.x, point.y, i)));
+
+        var colorOffset = 144 / layers.length;
+        var c = colorOffset * i;
+        var color = new Color(c, c, c);
+
+        iso.add(Shape.Prism(new Point(point.x, point.y, i)), color);
       }
     }
 
