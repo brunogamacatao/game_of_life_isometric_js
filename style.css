@@ -1,0 +1,19 @@
+body{
+  background-color: #222;
+  margin: 0;
+}
+
+
+/* There is some css hacking needed to display the right size, notice
+for instance that  height and width are half of the HTML definition 
+for retina screens */
+
+#art {
+  background-color: #111;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;  
+  height: 600px;  
+}
