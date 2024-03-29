@@ -1,6 +1,6 @@
-var initialCubes = 100;
-var width        = 30;
-var height       = 30;
+var initialCubes = 50;
+var width        = 20;
+var height       = 20;
 var layers       = [];
 var maxLayers    = 30;
 
@@ -126,6 +126,14 @@ function nextLayer() {
 
   if (layers.length > maxLayers) {
     layers.shift();
+  }
+
+  // counting life cells on the first layer and adding some randomness
+  if (nextLayer.length < initialCubes) {
+    var delta = initialCubes - nextLayer.length;
+    for (var i = 0; i < delta; i++) {
+      nextLayer.push({x: randRange(0, width), y: randRange(0, height)});
+    }
   }
 }
 
